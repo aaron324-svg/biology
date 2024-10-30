@@ -236,6 +236,12 @@
             alert('You have logged out successfully.');
             window.location.href = 'login.html'; // Redirect to login page
         });
+
+        // Signup detection (optional: for new users)
+        if (localStorage.getItem('isSignedUp')) {
+            alert('Welcome! Your account was created successfully.');
+            localStorage.removeItem('isSignedUp'); // Clear signup state after welcome
+        }
     </script>
 </body>
 </html>
