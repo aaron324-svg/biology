@@ -62,7 +62,6 @@
     </style>
 </head>
 <body>
-
     <div class="login-container">
         <h2>Login</h2>
         <form onsubmit="handleLogin(event)">
@@ -76,18 +75,5 @@
             <button onclick="redirectToSignUp()">Sign Up</button>
         </div>
     </div>
-
-    <script>
-        function handleLogin(event) {
-            event.preventDefault(); // Prevent form submission
-            alert('Successfully Logged In!');
-            window.location.href = 'index.html'; // Redirect to homepage (index.html)
-        }
-
-        function redirectToSignUp() {
-            window.location.href = 'signup.html'; // Redirect to sign-up page
-        }
-    </script>
-
 </body>
 </html>
