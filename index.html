@@ -223,5 +223,19 @@
     <footer>
         &copy; 2024 IB Biology Resources. All rights reserved.
     </footer>
+    <script>
+        // Check if the user is logged in
+        if (!localStorage.getItem('isLoggedIn')) {
+            alert('You must log in first!');
+            window.location.href = 'login.html'; // Redirect to login if not logged in
+        }
+
+        // Logout functionality
+        document.getElementById('logout-button').addEventListener('click', () => {
+            localStorage.removeItem('isLoggedIn'); // Clear login state
+            alert('You have logged out successfully.');
+            window.location.href = 'login.html'; // Redirect to login page
+        });
+    </script>
 </body>
 </html>
