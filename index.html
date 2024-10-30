@@ -225,9 +225,19 @@
     </footer>
     <script>
         // Check if the user is logged in
-        if (!localStorage.getItem('isLoggedIn')) {
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+        // Check if the user just logged in and display a welcome message if so
+        const justLoggedIn = localStorage.getItem('justLoggedIn');
+
+        if (!isLoggedIn) {
+            // If not logged in, redirect to login page
             alert('You must log in first!');
-            window.location.href = 'login.html'; // Redirect to login if not logged in
+            window.location.href = 'login.html';
+        } else if (justLoggedIn) {
+            // If the user just logged in, show a welcome message
+            alert('Successfully logged in!');
+            localStorage.removeItem('justLoggedIn'); // Clear the flag after showing the message
         }
 
         // Logout functionality
@@ -236,12 +246,6 @@
             alert('You have logged out successfully.');
             window.location.href = 'login.html'; // Redirect to login page
         });
-
-        // Signup detection (optional: for new users)
-        if (localStorage.getItem('isSignedUp')) {
-            alert('Welcome! Your account was created successfully.');
-            localStorage.removeItem('isSignedUp'); // Clear signup state after welcome
-        }
     </script>
 </body>
 </html>
