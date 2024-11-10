@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding-bottom: 100px;
+}
+header {
+    background: linear-gradient(135deg, #264653, #2a9d8f);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header img {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 2.2rem;
+}
+
+nav {
+    background-color: #2a9d8f;
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #264653;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: white;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+section h2, section h3 {
+    color: #264653;
+    margin-bottom: 15px;
+}
+
+section ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+section ul li {
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+section ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+section ul li a {
+    color: #2a9d8f;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+section ul li a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #264653;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+@media (max-width: 768px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+    main {
+        padding: 0 10px;
+    }
+}
