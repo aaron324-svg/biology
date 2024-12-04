@@ -11,25 +11,26 @@ body {
     line-height: 1.6;
     padding-bottom: 100px;
 }
+
 header {
     background: linear-gradient(135deg, #264653, #2a9d8f);
     color: white;
-    padding: 20px;
+    padding: 40px;
     text-align: center;
 }
 
 header img {
-    width: 80px;
-    margin-bottom: 10px;
+    width: 100px;
+    margin-bottom: 15px;
 }
 
 header h1 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
 }
 
 nav {
     background-color: #2a9d8f;
-    padding: 15px;
+    padding: 20px;
     text-align: center;
     position: sticky;
     top: 0;
@@ -41,8 +42,10 @@ nav a {
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
-    padding: 8px 15px;
-    border-radius: 5px;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
 }
 
 nav a:hover {
@@ -51,8 +54,27 @@ nav a:hover {
 
 main {
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 40px auto;
     padding: 0 20px;
+}
+
+.hero-section {
+    background-color: #2a9d8f;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.hero-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 1.1rem;
+    margin-top: 10px;
 }
 
 section {
@@ -63,39 +85,38 @@ section {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-section h2, section h3 {
+section h2 {
     color: #264653;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
-section ul {
+.grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
-    list-style: none;
-    padding: 0;
 }
 
-section ul li {
+.grid-item {
     background: #f0f0f0;
-    padding: 15px;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-section ul li:hover {
+.grid-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-section ul li a {
+.grid-item a {
     color: #2a9d8f;
     font-weight: 600;
     text-decoration: none;
 }
 
-section ul li a:hover {
+.grid-item a:hover {
     text-decoration: underline;
 }
 
@@ -114,7 +135,8 @@ footer {
         display: block;
         margin: 10px 0;
     }
-    main {
-        padding: 0 10px;
+
+    .hero-section {
+        padding: 40px 10px;
     }
 }
