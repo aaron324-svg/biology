@@ -1,6 +1,6 @@
 async function handleLogin(event) {
     event.preventDefault();
-    
+
     const username = document.getElementById('login-username').value.trim();
     const password = document.getElementById('login-password').value;
 
@@ -10,24 +10,14 @@ async function handleLogin(event) {
     }
 
     try {
-        const response = await fetch('/api/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ username, password }),
-        });
+        // Simulated successful login for demo purposes
+        const isValidUser = true; // Replace with actual validation logic
 
-        if (response.ok) {
-            const data = await response.json();
-            if (data.success) {
-                alert('Login successful!');
-                window.location.href = '/dashboard.html';
-            } else {
-                alert('Invalid username or password.');
-            }
+        if (isValidUser) {
+            alert('Login successful!');
+            window.location.href = 'index.html'; // Redirect to homepage
         } else {
-            alert('Login failed. Please try again.');
+            alert('Invalid username or password.');
         }
     } catch (error) {
         console.error('Error:', error);
@@ -36,5 +26,5 @@ async function handleLogin(event) {
 }
 
 function redirectToSignup() {
-    window.location.href = '/signup.html';
+    window.location.href = 'signup.html';
 }
