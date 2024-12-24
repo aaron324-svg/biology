@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="profilestyle.css">
+</head>
+<body>
+    <div class="profile-container">
+        <!-- Header -->
+        <header>
+            <h1>My Profile</h1>
+            <a href="index.html" class="home-button">Home</a>
+        </header>
+
+        <!-- Profile Information -->
+        <section class="profile-info">
+            <div class="profile-picture">
+                <img src="profile-placeholder.png" alt="Profile Picture">
+                <button class="edit-picture">Change</button>
+            </div>
+            <div class="user-details">
+                <h2 id="profile-name">John Doe</h2>
+                <p id="profile-email">johndoe@example.com</p>
+                <textarea id="profile-bio" placeholder="Add a short bio...">This is my bio.</textarea>
+                <button class="save-bio">Save Bio</button>
+            </div>
+        </section>
+
+        <!-- Activity Section -->
+        <section class="activity">
+            <h2>Recent Activity</h2>
+            <ul id="activity-list">
+                <li>Bookmarked "Genetics Flashcards" on 2023-12-20</li>
+                <li>Completed "Photosynthesis Video" on 2023-12-18</li>
+            </ul>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <button class="logout-button">Logout</button>
+        </footer>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>
