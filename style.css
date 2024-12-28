@@ -1,0 +1,124 @@
+/* Universal Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #264653;
+    margin-bottom: 10px;
+}
+
+header a {
+    text-decoration: none;
+    color: #2a9d8f;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border: 1px solid #2a9d8f;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+header a:hover {
+    background-color: #2a9d8f;
+    color: white;
+}
+
+/* Main Content */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* List Styling */
+main ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+main ul li {
+    background-color: #f8f9fa;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+main ul li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+main ul a {
+    text-decoration: none;
+    color: #2a9d8f;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: block;
+}
+
+main ul a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+footer a {
+    color: #2a9d8f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    main ul li {
+        padding: 10px 15px;
+    }
+}
