@@ -9,7 +9,11 @@
 </head>
 <body>
     <header>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/International_Baccalaureate_Logo.svg/297px-International_Baccalaureate_Logo.svg.png" alt="IB Biology Logo">
+        <div class="header-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/International_Baccalaureate_Logo.svg/297px-International_Baccalaureate_Logo.svg.png" 
+                alt="IB Biology Logo" class="logo">
+            <h1>Welcome To IB Biology Resources</h1>
+        </div>
     </header>
     
     <nav class="navbar">
@@ -21,51 +25,52 @@
             <li><a href="#youtube-videos">YouTube Videos</a></li>
             <li><a href="#revisionvillage">Revision Village</a></li>
             <li><a href="#pastpapers">Past Papers</a></li>
-            <li><a href="#Question Banks">Unit-wise Questions</a></li>
+            <li><a href="#QuestionBanks">Unit-wise Questions</a></li>
         </ul>
         <a href="profile.html" class="profile-button">Profile</a>
     </nav>
+
     <main>
-        <div class="hero-section">
-            <h2>Welcome To IB Biology Resources</h2>
-        </div>
-        <section id="studyguides">
-            <h3>Study Guides</h3>
-            <button onclick="window.location.href='studyguides.html';" class="section-button">explore study guides</button>
-        </section>
+        <div class="grid-container">
+            <section id="studyguides" class="grid-item">
+                <h3>Study Guides</h3>
+                <button onclick="window.location.href='studyguides.html';" class="section-button">Explore Study Guides</button>
+            </section>
 
-        <section id="textbooks">
-            <h3>Textbooks</h3>
-           <button onclick="window.location.href='textbooks.html';" class="section-button">Textbooks for Biology</button>
-        </section>
+            <section id="textbooks" class="grid-item">
+                <h3>Textbooks</h3>
+                <button onclick="window.location.href='textbooks.html';" class="section-button">Textbooks for Biology</button>
+            </section>
 
-        <section id="flashcards">
-            <h3>Flashcards</h3>
-            <button onclick="window.location.href='Flashcards.html';" class="section-button">Flashcards For Resvision</button>
-        </section>
+            <section id="flashcards" class="grid-item">
+                <h3>Flashcards</h3>
+                <button onclick="window.location.href='flashcards.html';" class="section-button">Flashcards for Revision</button>
+            </section>
 
-        <section id="youtube-videos">
-            <h3>YouTube Videos</h3>
-            <button onclick="window.location.href='Youtubevideos.html';" class="section-button">videos For Resvision</button>
-        </section>
+            <section id="youtube-videos" class="grid-item">
+                <h3>YouTube Videos</h3>
+                <button onclick="window.location.href='youtubevideos.html';" class="section-button">Videos for Revision</button>
+            </section>
+
+            <section id="revisionvillage" class="grid-item">
+                <h3>Revision Village</h3>
+                <button onclick="window.location.href='revisionvillage.html';" class="section-button">Visit Revision Village</button>
+            </section>
         
-        <section id="revisionvillage">
-            <h3>Revision Village</h3>
-            <button onclick="window.location.href='revisionvillagequestions.html.html';" class="section-button">revision Village</button>
-        </section>
-    
-        <section id="pastpapers">
-            <h3>Past Papers</h3>
-            <button onclick="window.location.href='pastpapers.html';" class="section-button">Past Papers For Practice</button>
-        </section>
-    
-        <section id="Question Banks">
-            <h3>Question Bank</h3>
-            <button onclick="window.location.href='QuestionBank.html';" class="section-button">Question bank For Resvision</button>
-        </section>
+            <section id="pastpapers" class="grid-item">
+                <h3>Past Papers</h3>
+                <button onclick="window.location.href='pastpapers.html';" class="section-button">Past Papers for Practice</button>
+            </section>
+        
+            <section id="QuestionBanks" class="grid-item">
+                <h3>Question Bank</h3>
+                <button onclick="window.location.href='QuestionBank.html';" class="section-button">Question Bank for Revision</button>
+            </section>
+        </div>
     </main>
+
     <footer>
-        &copy; 2024 IB Biology Resources. All rights reserved.
+        <p>&copy; 2024 IB Biology Resources. All rights reserved.</p>
     </footer>
 </body>
 </html>
