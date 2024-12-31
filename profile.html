@@ -17,15 +17,19 @@
 
         <!-- Profile Information -->
         <section class="profile-info">
-            <div class="profile-picture">
-                <img src="profile-placeholder.png" alt="Profile Picture">
-                <button class="edit-picture">Change</button>
+            <!-- Drag-and-Drop Profile Picture -->
+            <div class="profile-picture" id="profile-picture-container">
+                <img id="profile-picture" src="profile-placeholder.png" alt="Profile Picture">
+                <p id="drag-drop-text">Drag & Drop a new picture or click to upload</p>
+                <input type="file" id="upload-picture" style="display: none;">
             </div>
+
+            <!-- Editable User Details -->
             <div class="user-details">
-                <h2 id="profile-name">John Doe</h2>
+                <h2 id="profile-name" contenteditable="true" class="editable">John Doe</h2>
                 <p id="profile-email">johndoe@example.com</p>
-                <textarea id="profile-bio" placeholder="Add a short bio...">This is my bio.</textarea>
-                <button class="save-bio">Save Bio</button>
+                <textarea id="profile-bio" class="editable" placeholder="Add a short bio...">This is my bio.</textarea>
+                <textarea id="profile-description" class="editable" placeholder="Add a description...">This is my profile description.</textarea>
             </div>
         </section>
 
