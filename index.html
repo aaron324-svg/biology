@@ -29,18 +29,15 @@
             <li><a href="#revisionvillage">Revision Village</a></li>
             <li><a href="#pastpapers">Past Papers</a></li>
             <li><a href="#QuestionBanks">Unit-wise Questions</a></li>
+            <li><a href="admin.html">Admin Dashboard</a></li>
         </ul>
     </nav>
 
-    <!-- Search Section -->
-    <section id="search-section">
-        <input
-            type="text"
-            id="search-bar"
-            placeholder="Search resources..."
-            oninput="searchResources(this.value)"
-        />
-        <div id="search-results"></div>
+    <!-- Notification Section -->
+    <section id="notification-section">
+        <h2>Notifications</h2>
+        <button onclick="showNotification()">Check Notifications</button>
+        <div id="notifications"></div>
     </section>
 
     <main>
