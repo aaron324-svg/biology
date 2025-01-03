@@ -32,6 +32,17 @@
         </ul>
     </nav>
 
+    <!-- Search Section -->
+    <section id="search-section">
+        <input
+            type="text"
+            id="search-bar"
+            placeholder="Search resources..."
+            oninput="searchResources(this.value)"
+        />
+        <div id="search-results"></div>
+    </section>
+
     <main>
         <div class="grid-container">
             <section id="studyguides" class="grid-item">
@@ -74,5 +85,7 @@
     <footer>
         <p>&copy; 2024 IB Biology Resources. All rights reserved.</p>
     </footer>
+
+    <script src="index.js"></script>
 </body>
 </html>
