@@ -89,6 +89,50 @@ header h1 {
     transform: scale(1.1);
 }
 
+/* Notification Section */
+#notification-section {
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#notification-section h2 {
+    font-size: 1.8rem;
+    color: #264653;
+    margin-bottom: 15px;
+}
+
+#notification-section button {
+    background-color: #2a9d8f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#notification-section button:hover {
+    background-color: #1b5048;
+}
+
+#notifications {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 0.95rem;
+    color: #333;
+    text-align: left;
+}
+
 /* Main Content */
 main .grid-container {
     display: grid;
