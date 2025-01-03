@@ -89,27 +89,35 @@ header h1 {
     transform: scale(1.1);
 }
 
+/* Notification and Calendar Grid Layout */
+.notification-main {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Notifications on the left (1 part), Calendar on the right (2 parts) */
+    gap: 20px;
+    margin: 20px;
+    padding: 20px;
+}
+
 /* Notification Section */
 #notification-section {
-    text-align: center;
-    margin: 30px 0;
-    padding: 20px;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left; /* Align content to the left */
 }
 
 #notification-section h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: #264653;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 #notification-section button {
     background-color: #2a9d8f;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 8px 15px;
     font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
@@ -126,11 +134,31 @@ header h1 {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 5px;
-    max-width: 500px;
-    margin: 0 auto;
     font-size: 0.95rem;
     color: #333;
-    text-align: left;
+    max-height: 300px;
+    overflow-y: auto; /* Add scroll if content exceeds height */
+}
+
+/* Calendar Section */
+#calendar-section {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#calendar-section h2 {
+    font-size: 1.6rem;
+    color: #264653;
+    margin-bottom: 15px;
+}
+
+#calendar {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #f9f9f9;
 }
 
 /* Main Content */
@@ -154,34 +182,3 @@ main .grid-item {
 main .grid-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-main .grid-item h3 {
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-    color: #264653;
-}
-
-.section-button {
-    background-color: #2a9d8f;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.section-button:hover {
-    background-color: #1b5048;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 15px;
-    background-color: #ffffff;
-    border-top: 2px solid #e0e0e0;
-    font-size: 0.9rem;
-}
