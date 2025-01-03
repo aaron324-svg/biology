@@ -6,6 +6,8 @@
     <title>IB Biology Resources</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
+    <!-- FullCalendar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -29,60 +31,70 @@
             <li><a href="#revisionvillage">Revision Village</a></li>
             <li><a href="#pastpapers">Past Papers</a></li>
             <li><a href="#QuestionBanks">Unit-wise Questions</a></li>
-            <li><a href="admin.html">Admin Dashboard</a></li>
+            <li><a href="#dashboard">Admin Dashboard</a></li>
         </ul>
     </nav>
 
-    <!-- Notification Section -->
-    <section id="notification-section">
-        <h2>Notifications</h2>
-        <button onclick="showNotification()">Check Notifications</button>
-        <div id="notifications"></div>
-    </section>
+    <main class="notification-main">
+        <!-- Notification Section -->
+        <section id="notification-section" class="grid-item">
+            <h2>Notifications</h2>
+            <button onclick="fetchNotifications()">Check Notifications</button>
+            <div id="notifications">
+                <p>No new notifications.</p>
+            </div>
+        </section>
 
-    <main>
-        <div class="grid-container">
-            <section id="studyguides" class="grid-item">
-                <h3>Study Guides</h3>
-                <button onclick="window.location.href='studyguides.html';" class="section-button">Explore Study Guides</button>
-            </section>
+        <!-- Calendar Section -->
+        <section id="calendar-section" class="grid-item">
+            <h2>Event Calendar</h2>
+            <div id="calendar"></div>
+        </section>
+    </main>
 
-            <section id="textbooks" class="grid-item">
-                <h3>Textbooks</h3>
-                <button onclick="window.location.href='textbooks.html';" class="section-button">Textbooks for Biology</button>
-            </section>
+    <main class="grid-container">
+        <section id="studyguides" class="grid-item">
+            <h3>Study Guides</h3>
+            <button onclick="window.location.href='studyguides.html';" class="section-button">Explore Study Guides</button>
+        </section>
 
-            <section id="flashcards" class="grid-item">
-                <h3>Flashcards</h3>
-                <button onclick="window.location.href='flashcards.html';" class="section-button">Flashcards for Revision</button>
-            </section>
+        <section id="textbooks" class="grid-item">
+            <h3>Textbooks</h3>
+            <button onclick="window.location.href='textbooks.html';" class="section-button">Textbooks for Biology</button>
+        </section>
 
-            <section id="youtube-videos" class="grid-item">
-                <h3>YouTube Videos</h3>
-                <button onclick="window.location.href='youtubevideos.html';" class="section-button">Videos for Revision</button>
-            </section>
+        <section id="flashcards" class="grid-item">
+            <h3>Flashcards</h3>
+            <button onclick="window.location.href='flashcards.html';" class="section-button">Flashcards for Revision</button>
+        </section>
 
-            <section id="revisionvillage" class="grid-item">
-                <h3>Revision Village</h3>
-                <button onclick="window.location.href='revisionvillage.html';" class="section-button">Visit Revision Village</button>
-            </section>
-        
-            <section id="pastpapers" class="grid-item">
-                <h3>Past Papers</h3>
-                <button onclick="window.location.href='pastpapers.html';" class="section-button">Past Papers for Practice</button>
-            </section>
-        
-            <section id="QuestionBanks" class="grid-item">
-                <h3>Question Bank</h3>
-                <button onclick="window.location.href='QuestionBank.html';" class="section-button">Question Bank for Revision</button>
-            </section>
-        </div>
+        <section id="youtube-videos" class="grid-item">
+            <h3>YouTube Videos</h3>
+            <button onclick="window.location.href='youtubevideos.html';" class="section-button">Videos for Revision</button>
+        </section>
+
+        <section id="revisionvillage" class="grid-item">
+            <h3>Revision Village</h3>
+            <button onclick="window.location.href='revisionvillage.html';" class="section-button">Visit Revision Village</button>
+        </section>
+
+        <section id="pastpapers" class="grid-item">
+            <h3>Past Papers</h3>
+            <button onclick="window.location.href='pastpapers.html';" class="section-button">Past Papers for Practice</button>
+        </section>
+
+        <section id="QuestionBanks" class="grid-item">
+            <h3>Question Bank</h3>
+            <button onclick="window.location.href='QuestionBank.html';" class="section-button">Question Bank for Revision</button>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2024 IB Biology Resources. All rights reserved.</p>
     </footer>
 
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
     <script src="index.js"></script>
 </body>
 </html>
