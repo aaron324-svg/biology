@@ -1,30 +1,53 @@
+// Import Firebase Authentication
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+
+// Firebase configuration
+const firebaseConfig = {
+    apiKey: "your-api-key",
+    authDomain: "your-auth-domain",
+    projectId: "your-project-id",
+    storageBucket: "your-storage-bucket",
+    messagingSenderId: "your-messaging-sender-id",
+    appId: "your-app-id",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+// Handle Login Function
 async function handleLogin(event) {
     event.preventDefault();
 
-    const username = document.getElementById('login-username').value.trim();
+    const email = document.getElementById('login-username').value.trim(); // Firebase uses email, not username
     const password = document.getElementById('login-password').value;
 
-    if (!username || !password) {
-        alert("Please enter both username and password.");
+    if (!email || !password) {
+        alert("Please enter both email and password.");
         return;
     }
 
     try {
-        // Simulated successful login for demo purposes
-        const isValidUser = true; // Replace with actual validation logic
+        // Sign in with Firebase Authentication
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
 
-        if (isValidUser) {
-            alert('Login successful!');
-            window.location.href = 'index.html'; // Redirect to homepage
-        } else {
-            alert('Invalid username or password.');
-        }
+        // Successful login
+        console.log('User logged in:', user);
+        alert('Login successful!');
+        window.location.href = 'index.html'; // Redirect to homepage
     } catch (error) {
-        console.error('Error:', error);
-        alert('An error occurred. Please try again later.');
+        console.error('Error during login:', error);
+        alert(error.message); // Display Firebase error message
     }
 }
 
+// Redirect to Signup Function
 function redirectToSignup() {
     window.location.href = 'signup.html';
 }
+
+// Attach Event Listener
+document.getElementById('login-form').addEventListener('submit', handleLogin);
+document.getElementById('signup-link').addEventListener('click', redirectToSignup);
