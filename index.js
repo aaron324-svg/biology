@@ -1,6 +1,5 @@
-// Notifications Functionality
+// Fetch Notifications
 function fetchNotifications() {
-    // Mock notifications - Replace with your backend API call if needed
     const notifications = [
         { id: 1, message: "New study guide available for Biology HL." },
         { id: 2, message: "Past Papers updated with 2023 exams." },
@@ -14,14 +13,24 @@ function fetchNotifications() {
         notificationsContainer.innerHTML = "<p>No new notifications.</p>";
     } else {
         notifications.forEach(notification => {
-            const notificationItem = document.createElement('p');
-            notificationItem.textContent = notification.message;
+            const notificationItem = document.createElement('div');
+            notificationItem.classList.add('notification-item');
+
+            const notificationText = document.createElement('p');
+            notificationText.textContent = notification.message;
+
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Dismiss';
+            deleteButton.onclick = () => notificationItem.remove();
+
+            notificationItem.appendChild(notificationText);
+            notificationItem.appendChild(deleteButton);
             notificationsContainer.appendChild(notificationItem);
         });
     }
 }
 
-// FullCalendar Initialization
+// Initialize FullCalendar
 document.addEventListener('DOMContentLoaded', function () {
     const calendarEl = document.getElementById('calendar');
 
@@ -32,6 +41,8 @@ document.addEventListener('DOMContentLoaded', function () {
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay',
         },
+        editable: true, // Allow adding and modifying events
+        selectable: true, // Allow selecting dates for new events
         events: [
             {
                 title: 'Biology HL Study Session',
@@ -53,7 +64,31 @@ document.addEventListener('DOMContentLoaded', function () {
         eventClick: function (info) {
             alert(`Event: ${info.event.title}\nDescription: ${info.event.extendedProps.description}`);
         },
+        select: function (info) {
+            const title = prompt('Enter event title:');
+            if (title) {
+                calendar.addEvent({
+                    title: title,
+                    start: info.startStr,
+                    end: info.endStr,
+                    allDay: info.allDay,
+                });
+                alert('Event added!');
+            }
+            calendar.unselect(); // Clear selection
+        },
+        eventDrop: function (info) {
+            alert(`Event moved to ${info.event.start.toISOString()}`);
+            // Update event in the backend if necessary
+        },
+        eventResize: function (info) {
+            alert(`Event duration updated to end at ${info.event.end.toISOString()}`);
+            // Update event in the backend if necessary
+        },
     });
 
     calendar.render();
 });
+
+// Fetch notifications on page load
+fetchNotifications();
