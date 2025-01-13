@@ -1,13 +1,19 @@
 // Import dependencies
 const express = require("express");
-const bcrypt = require("bcrypt"); // For hashing passwords
-const jwt = require("jsonwebtoken"); // For managing sessions
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const app = express();
 
 // Firebase imports
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
-import { getAuth, signInWithCredential, GoogleAuthProvider, OAuthProvider } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
+import {
+    getAuth,
+    signInWithCredential,
+    GoogleAuthProvider,
+    OAuthProvider,
+} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
 
 // Firebase configuration
 const firebaseConfig = {
@@ -16,7 +22,7 @@ const firebaseConfig = {
     projectId: "YOUR_PROJECT_ID",
     storageBucket: "YOUR_PROJECT_ID.appspot.com",
     messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
+    appId: "YOUR_APP_ID",
 };
 
 // Initialize Firebase
@@ -24,6 +30,7 @@ const firebaseApp = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
 
 // Middleware
+app.use(cors());
 app.use(express.json()); // For parsing JSON data
 
 // Connect to MongoDB
@@ -40,7 +47,6 @@ const userSchema = new mongoose.Schema({
     provider: { type: String, default: "local" }, // 'google', 'apple', or 'local'
 });
 
-// User Model
 const User = mongoose.model("User", userSchema);
 
 // **Routes**
@@ -89,12 +95,11 @@ app.post("/login", async (req, res) => {
 
 // Google/Apple OAuth (Firebase)
 app.post("/oauth", async (req, res) => {
-    const { token, provider } = req.body; // Firebase OAuth token and provider info
+    const { token, provider } = req.body;
 
     try {
         let userCredential;
 
-        // Sign in with the provided Firebase OAuth token based on the provider
         if (provider === "google") {
             const googleProvider = new GoogleAuthProvider();
             userCredential = await signInWithCredential(auth, googleProvider.credential(token));
@@ -103,13 +108,11 @@ app.post("/oauth", async (req, res) => {
             userCredential = await signInWithCredential(auth, appleProvider.credential(token));
         }
 
-        // Retrieve user info
         const firebaseUser = userCredential.user;
         const email = firebaseUser.email;
         let user = await User.findOne({ email });
 
         if (!user) {
-            // If user doesn't exist, create a new account
             user = new User({
                 email,
                 provider,
@@ -118,7 +121,6 @@ app.post("/oauth", async (req, res) => {
             await user.save();
         }
 
-        // Generate JWT (session token)
         const jwtToken = jwt.sign({ userId: user._id }, "YOUR_SECRET_KEY", {
             expiresIn: "1h",
         });
@@ -127,6 +129,26 @@ app.post("/oauth", async (req, res) => {
     } catch (error) {
         res.status(500).json({ message: "Error with OAuth login!", error });
     }
+});
+
+// Token Middleware
+app.use((req, res, next) => {
+    const token = req.headers.authorization?.split(" ")[1];
+    if (!token) return res.status(401).json({ message: "Unauthorized!" });
+
+    try {
+        const decoded = jwt.verify(token, "YOUR_SECRET_KEY");
+        req.userId = decoded.userId;
+        next();
+    } catch (error) {
+        res.status(403).json({ message: "Invalid token!" });
+    }
+});
+
+// Admin Dashboard Route (Example)
+app.get("/admin/dashboard", async (req, res) => {
+    const users = await User.find();
+    res.status(200).json({ users });
 });
 
 // Start the server
