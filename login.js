@@ -33,6 +33,20 @@ async function handleLogin(event) {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
 
+        // Save user token locally for session management
+        const idToken = await user.getIdToken();
+        localStorage.setItem("authToken", idToken);
+
+        // Notify backend of successful login (optional, for activity tracking)
+        await fetch("http://localhost:5000/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${idToken}`, // Send token for verification
+            },
+            body: JSON.stringify({ email }),
+        });
+
         // Successful login
         console.log('User logged in:', user);
         alert('Login successful!');
@@ -51,3 +65,6 @@ function redirectToSignup() {
 // Attach Event Listener
 document.getElementById('login-form').addEventListener('submit', handleLogin);
 document.getElementById('signup-link').addEventListener('click', redirectToSignup);
+
+// Additional Functionality for Notification Clearing
+localStorage.setItem("notificationsDismissed", "true"); // Example for clearing notifications
