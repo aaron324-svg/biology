@@ -4,23 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IB Biology Resources</title>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Main CSS -->
     <link rel="stylesheet" href="index.css">
-    <!-- FullCalendar CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/International_Baccalaureate_Logo.svg/297px-International_Baccalaureate_Logo.svg.png" 
-                alt="IB Biology Logo" class="logo">
-            <h1>Welcome To IB Biology Resources</h1>
-            <a href="profile.html" class="profile-button">
-                <img src="https://via.placeholder.com/40" alt="Profile Picture">
-            </a>
-        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/International_Baccalaureate_Logo.svg/297px-International_Baccalaureate_Logo.svg.png" alt="IB Biology Logo">
     </header>
     
     <nav class="navbar">
@@ -32,74 +21,104 @@
             <li><a href="#youtube-videos">YouTube Videos</a></li>
             <li><a href="#revisionvillage">Revision Village</a></li>
             <li><a href="#pastpapers">Past Papers</a></li>
-            <li><a href="#QuestionBanks">Unit-wise Questions</a></li>
-            <li><a href="#dashboard">Admin Dashboard</a></li>
+            <li><a href="#unit-wise-questions">Unit-wise Questions</a></li>
         </ul>
+        <a href="profile.html" class="profile-button">Profile</a>
     </nav>
-
-    <main class="notification-main">
-        <!-- Notification Section -->
-        <section id="notification-section" class="grid-item">
-            <h2>Notifications</h2>
-            <button onclick="fetchNotifications()">Check Notifications</button>
-            <div id="notifications">
-                <p>No new notifications.</p>
-            </div>
+    <main>
+        <div class="hero-section">
+            <h2>Welcome To IB Biology Resources</h2>
+        </div>
+        <section id="theme">
+            <h2>Theme</h2>
+            <ul>
+                <li>Unity and Diversity</li>
+                <li>Form and Function</li>
+                <li>Interaction and Interdependence</li>
+                <li>Continuity and Change</li>
+            </ul>
         </section>
 
-        <!-- Calendar Section -->
-        <section id="calendar-section" class="grid-item">
-            <h2>Event Calendar</h2>
-            <div id="calendar"></div>
-        </section>
-    </main>
-
-    <main class="grid-container">
-        <section id="studyguides" class="grid-item">
+        <section id="studyguides">
             <h3>Study Guides</h3>
-            <button onclick="window.location.href='studyguides.html';" class="section-button">Explore Study Guides</button>
+            <ul>
+                <li><a href="https://www.commackschools.org/Downloads/BIOLOGY%20Oxfor%20IB%20Study%20Guides%20SL.pdf" target="_blank">Oxford IB Study Guides</a></li>
+                <li><a href="https://static1.squarespace.com/static/5e1db2db7fbc921eae5c733f/t/64105bd1d13ca0579fa769b8/1678793699205/ib-academy.nl+Biology+HL.pdf" target="_blank">Squarespace Biology Study Guide</a></li>
+                <li><a href="https://blog.prepscholar.com/the-best-ib-biology-study-guide-and-notes-for-sl-and-hl" target="_blank">Prepscholar Study Guide for IB Biology</a></li>
+            </ul>
         </section>
 
-        <section id="textbooks" class="grid-item">
+        <section id="textbooks">
             <h3>Textbooks</h3>
-            <button onclick="window.location.href='textbooks.html';" class="section-button">Textbooks for Biology</button>
+            <ul>
+                <li><a href="https://ebooks.papacambridge.com/directories/IB/IB-ebooks/upload/biology%20-%20course%20companion%20-%20andrew%20allott%20and%20david%20mindorff%20-%20oxford%202014.pdf" target="_blank">Biology Course Companion</a></li>
+                <li><a href="https://ebooks.papacambridge.com/directories/IB/IB-ebooks/upload/biology%20-%20brenda%20walpole%20-%20second%20edition%20-%20cambridge%202014%20.pdf" target="_blank">Biology Second Edition</a></li>
+                <li><a href="https://myibsource.com/collections/dp-biology-2023" target="_blank">IB Source Biology Textbooks</a></li>
+            </ul>
         </section>
 
-        <section id="flashcards" class="grid-item">
+        <section id="flashcards">
             <h3>Flashcards</h3>
-            <button onclick="window.location.href='flashcards.html';" class="section-button">Flashcards for Revision</button>
+            <ul>
+                <li><a href="https://quizlet.com/se/72094767/ib-biology-topic-2-cells-hlsl-flash-cards/" target="_blank">Flashcards on Cells</a></li>
+                <li><a href="https://quizlet.com/851125537/11-ib-biology-hl-b11-molecules-carbohydrates-and-lipids-flash-cards/" target="_blank">Flashcards on Molecules</a></li>
+                <li><a href="https://quizlet.com/250166907/ib-biology-flash-cards/" target="_blank">General IB Biology Flashcards</a></li>
+                <li><a href="https://quizlet.com/17994740/ib-biology-hl-flash-cards/" target="_blank">IB Biology HL Flashcards</a></li>
+            </ul>
         </section>
 
-        <section id="youtube-videos" class="grid-item">
+        <section id="youtube-videos">
             <h3>YouTube Videos</h3>
-            <button onclick="window.location.href='youtubevideos.html';" class="section-button">Videos for Revision</button>
+            <ul>
+                <li><a href="https://youtube.com/playlist?list=PLEnRjfGdbEtKRMdp_x5ywmUCRd6vVJNwU&si=dKeNFZBVwbmNsesz" target="_blank">Introduction to Biology</a></li>
+                <li><a href="https://youtube.com/playlist?list=PLU9wEyzVsaZVsL95m4hoEGNEz5SBGucgD&si=jEFiNYNDJc9FEk6G" target="_blank">Cell Biology</a></li>
+                <li><a href="https://youtube.com/playlist?list=PLU9wEyzVsaZX4XuoatnuLB5Czh__tEZ6H&si=6alID0d9E6jW3D6S" target="_blank">Molecular Biology</a></li>
+                <li><a href="https://youtube.com/playlist?list=PLU9wEyzVsaZXzjYGM4ZfoDG_60eQmjXBZ&si=IDjrLdyta2zHFdEg" target="_blank">Genetics</a></li>
+                <li><a href="https://youtube.com/playlist?list=PLU9wEyzVsaZZ5n6xsWjESKdjgZ3od6W3&si=mB6nhhVG7lTr50g2" target="_blank">Ecology</a></li>
+                <li><a href="https://youtube.com/playlist?list=PLU9wEyzVsaZWLLArFkHJSswbFy8dnXKhq&si=RehDZkO-P9zw3PHK" target="_blank">Human Physiology</a></li>
+                <li><a href="https://youtube.com/playlist?list=PLU9wEyzVsaZRggPxFvWHUCPuOxdOTBFL-&si=GqJeW2Px5DjDl-DV" target="_blank">Genetics and Evolution</a></li>
+                <li><a href="https://youtube.com/playlist?list=PLU9wEyzVsaZW9MpeBDWJmuB6SfzKwxzDg&si=fO50sgnjX3PhQmio" target="_blank">Metabolism, Cell Respiration and Photosynthesis</a></li>
+                <li><a href="https://youtube.com/playlist?list=PLU9wEyzVsaZWv8thWtol13z6MEoQIf8EZ&si=KLqqzaLd4r7HTuem" target="_blank">Plant Biology</a></li>
+            </ul>
         </section>
-
-        <section id="revisionvillage" class="grid-item">
+        <section id="revisionvillage">
             <h3>Revision Village</h3>
-            <button onclick="window.location.href='revisionvillage.html';" class="section-button">Visit Revision Village</button>
+            <ul>
+                <li><a href="https://www.revisionvillage.com/ib-biology/sl/questionbank/" target="_blank">Revision Village Question Bank SL</a></li>
+                <li><a href="https://www.revisionvillage.com/ib-biology/sl-2025/questionbank/" target="_blank">Revision Village Question Bank 2025 SL</a></li>
+                <li><a href="https://www.revisionvillage.com/ib-biology/hl/questionbank/" target="_blank">Revision Village Question Bank HL - 2024</a></li>
+                <li><a href="https://www.revisionvillage.com/ib-biology/hl-2025/questionbank/" target="_blank">Revision Village Question Bank HL - 2025</a></li>
+            </ul>
         </section>
-
-        <section id="pastpapers" class="grid-item">
+    
+        <section id="pastpapers">
             <h3>Past Papers</h3>
-            <button onclick="window.location.href='pastpapers.html';" class="section-button">Past Papers for Practice</button>
+            <ul>
+                <li><a href="https://dl.ibdocs.re/IB%20PAST%20PAPERS%20-%20SUBJECT/Group%204%20-%20Sciences/Biology_HL/" target="_blank">Past Papers for IB Bio HL</a></li>
+                <li><a href="https://dl.ibdocs.re/IB%20PAST%20PAPERS%20-%20SUBJECT/Group%204%20-%20Sciences/Biology_SL/" target="_blank">Past Papers for Biology SL</a></li>
+                <li><a href="https://www.revisiondojo.com/collections/23625757-1671-4be2-9d67-976cce6f4e57" target="_blank">Revision Dojo Practice Test</a></li>
+                <li><a href="https://www.revisiondojo.com/collections/b9ab631b-48db-4c7c-a18f-48e4baebba5c" target="_blank">HL Test Biology Revision Dojo</a></li>
+            </ul>
         </section>
-
-        <section id="QuestionBanks" class="grid-item">
+    
+        <section id="unit-wise-questions">
             <h3>Question Bank</h3>
-            <button onclick="window.location.href='QuestionBank.html';" class="section-button">Question Bank for Revision</button>
+            <ul>
+                <li><a href="https://www.revisiondojo.com/ib/ib-biology-new/ib-biology-new-a-unity-and-diversity?level=%5B%22sl%22%2C%22both%22%5D" target="_blank">Questions for Unity and Diversity SL</a></li>
+                <li><a href="https://www.revisiondojo.com/ib/ib-biology-new/ib-biology-new-a-unity-and-diversity?level=%5B%22hl%22%2C%22both%22%5D" target="_blank">Questions for Unity and Diversity HL</a></li>
+                <li><a href="https://www.revisiondojo.com/ib/ib-biology-new/ib-biology-new-b-form-and-function?level=%5B%22sl%22%2C%22both%22%5D" target="_blank">Questions for Form and Function SL</a></li>
+                <li><a href="https://www.revisiondojo.com/ib/ib-biology-new/ib-biology-new-b-form-and-function?level=%5B%22hl%22%2C%22both%22%5D" target="_blank">Questions for Form and Function HL</a></li>
+                <li><a href="https://www.revisiondojo.com/ib/ib-biology-new/ib-biology-new-c-interaction-and-interdependence?level=%5B%22sl%22%2C%22both%22%5D" target="_blank">Questions for Interaction and Interdependence SL</a></li>
+                <li><a href="https://www.revisiondojo.com/ib/ib-biology-new/ib-biology-new-c-interaction-and-interdependence?level=%5B%22hl%22%2C%22both%22%5D" target="_blank">Questions for Interaction and Interdependence HL</a></li>
+                <li><a href="https://www.revisiondojo.com/ib/ib-biology-new/ib-biology-new-d-continuity-and-change?level=%5B%22sl%22%2C%22both%22%5D" target="_blank">Questions for Continuity and Change SL</a></li>
+                <li><a href="https://www.revisiondojo.com/ib/ib-biology-new/ib-biology-new-d-continuity-and-change?level=%5B%22hl%22%2C%22both%22%5D" target="_blank">Questions for Continuity and Change HL</a></li>
+                <li><a href="https://dl.ibdocs.re/IB%20QUESTIONBANKS/5.%20Fifth%20Edition%20-%20TOPIC/questionbank.ibo.org/en/teachers/00000/questionbanks/43-dp-biology/syllabus_sections.html" target="_blank">IB Question Bank</a></li>
+            </ul>
         </section>
     </main>
-
+    <script>src="index.js"</script>
     <footer>
-        <p>&copy; 2024 IB Biology Resources. All rights reserved.</p>
+        &copy; 2024 IB Biology Resources. All rights reserved.
     </footer>
-
-    <!-- FullCalendar JS -->
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
-    <!-- Main JavaScript -->
-    <script src="index.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
 </body>
 </html>
