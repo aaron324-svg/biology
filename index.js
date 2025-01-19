@@ -55,3 +55,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     calendar.render();
 });
+
+// Call fetchNotifications on page load
+window.onload = function () {
+    fetchNotifications();
+};
